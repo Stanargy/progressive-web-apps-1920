@@ -1,0 +1,50 @@
+
+
+<% include ./noscript %>
+
+<img id="obaIMG" src="./assets/obaIMG2.jpeg">
+  <section class="header">
+  <h1>Amsterdam Public Library</h1>
+</section>
+
+
+<div class="subHeader">
+  <div class="subTitle">
+  </div>
+  <div>
+
+</div>
+
+</div>
+  <div class="allBooks" tabindex="0">
+
+  <% mydata.forEach(book =>{ %>
+  <div class="singleBook"><a href="<%= book.isbn %>"</a>
+ <img class="bookCover" src="<%= book.cover_image %>" alt="Cover Image: <%= book.title %>"></img>
+   <div class="bookTitle" >  <%= book.title %> </div>
+   <div class="bookAuthor">  <%= book.author %> </div>
+   <div class="bookPub">  <%= book.publication_year %> </div>
+   <div class="bookDiscription">  <%= book.description %> </div>
+   </a>
+  <button id="likeBtn <%= book.isbn %>">⭐</button></div><div id="totalLikes<%= book.isbn %>"><%= book.likes %></div>
+    
+ <% }) %>
+
+
+</div>
+
+  
+</div>  
+  
+<!--
+
+
+next i need to layer the camera of the handtrack js behind the camera of the a-scene so that it is invisible to the user but still tracks
+then i need to add an async script that looks continuously for detected hands and then renders a box on that hand for 0.2 seconds before it tracks the hand to a new spot to put the box on
+
+
+
+
+-->
+
+
